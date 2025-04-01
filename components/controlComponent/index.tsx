@@ -1,9 +1,9 @@
 export default function ControlComponent() {
   return (
     <div>
-      <select>
+      {/* <select>
         <option>Popular</option>
-      </select>
+      </select> */}
     </div>
   );
 }
