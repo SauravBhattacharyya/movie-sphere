@@ -12,3 +12,13 @@ export const fetchPopularMovies = async (page: number) => {
     throw e;
   }
 };
+
+export const fetchGenresList = async () => {
+  try {
+    const response = await axiosInstance.get(ENDPOINTS.GENRESLIST);
+    return response;
+  } catch (e) {
+    console.error("Error fetching genres list", e);
+    throw e;
+  }
+};

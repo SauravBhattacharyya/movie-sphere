@@ -14,3 +14,8 @@ export interface MovieListType {
   vote_average: number;
   vote_count: number;
 }
+
+export interface GenresListType {
+  id: number;
+  name: string;
+}

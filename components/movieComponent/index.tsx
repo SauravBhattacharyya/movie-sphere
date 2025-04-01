@@ -27,11 +27,11 @@ export default function MovieComponent() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMovieListLoading]);
 
+  if (isMovieListLoading) return <Loader />;
+
   return (
-    <div className="grid grild-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {isMovieListLoading ? (
-        <Loader />
-      ) : movieList && movieList.length > 0 ? (
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-10">
+      {movieList && movieList?.length > 0 ? (
         movieList.map((movie) => <MovieCard key={movie.id} movie={movie} />)
       ) : (
         <div>No movies found</div>

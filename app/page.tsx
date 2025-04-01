@@ -1,16 +1,22 @@
+"use client";
 import ControlComponent from "@/components/controlComponent";
 import Header from "@/components/header";
 import MovieComponent from "@/components/movieComponent";
-import { AppProvider } from "@/context";
+import { useAppContext } from "@/context";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { getGenresList } = useAppContext();
+
+  useEffect(() => {
+    getGenresList();
+  }, []);
+
   return (
     <>
-      <AppProvider>
-        <Header />
-        {/* <ControlComponent /> */}
-        <MovieComponent />
-      </AppProvider>
+      <Header />
+      {/* <ControlComponent /> */}
+      <MovieComponent />
     </>
   );
 }
